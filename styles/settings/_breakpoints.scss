@@ -6,24 +6,20 @@ $breakpoints-in-px: (
   mobile: 320px,
   tablet: 768px,
   desktop: 1440px,
-  bigscreen: 1920px,
 );
 
 $mobile: map.get($breakpoints-in-px, mobile);
 $tablet: map.get($breakpoints-in-px, tablet);
 $desktop: map.get($breakpoints-in-px, desktop);
-$bigscreen: map.get($breakpoints-in-px, bigscreen);
 
 $breakpoints: (
   mobile: math.div(px-to-rem($mobile), 1rem) * 1em,
   tablet: math.div(px-to-rem($tablet), 1rem) * 1em,
   desktop: math.div(px-to-rem($desktop), 1rem) * 1em,
-  bigscreen: math.div(px-to-rem($bigscreen), 1rem) * 1em,
 );
 
 :root {
   --breakpoint-mobile: #{map.get($breakpoints, mobile)};
   --breakpoint-tablet: #{map.get($breakpoints, tablet)};
   --breakpoint-desktop: #{map.get($breakpoints, desktop)};
-  --breakpoint-bigscreen: #{map.get($breakpoints, bigscreen)};
 }

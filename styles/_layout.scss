@@ -1,16 +1,78 @@
 @use './settings/typography' as *;
+@use './tools/media-query' as *;
+@use './tools/px-to-rem' as *;
+@use './tools/fluid-unit' as *;
 
 .coming-soon__logo {
-  max-width: 10rem;
+  width: fluid-unit(
+		(
+			mobile: 100px,
+			desktop: 150px,
+		)
+	);
+}
+
+.coming-soon__wrapper {
+	display: flex;
+	flex-direction: column;
+
+	@include mq(tablet) {
+		flex-direction: row;
+	}
 }
 
 .coming-soon__heading--light {
   @include font-set(h1-light);
+
+	color: var(--color-pink);
 }
 
-// attribution
-.attribution {
-	text-align: center;
-	position: fixed;
-	bottom: 5px;
+.coming-soon__hero-image img {
+	width: 100%;
+
+	@include mq(tablet) {
+		direction: rtl;
+	}
 }
+
+.coming-soon__content {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	gap: var(--space-m);
+	margin: var(--space-margin-top-bottom) var(--space-margin-left-right);
+}
+
+.coming-soon__form {
+	position: relative;
+	display: flex;
+	height: fluid-unit(
+		(
+			mobile: 50px,
+			desktop: 55px,
+		)
+	);
+}
+
+.coming-soon__form input[type=email] {
+	padding: var(--space-s) var(--space-xs);
+}
+
+.coming-soon__form input[type=submit] {
+	position: absolute;
+  padding-right: 40px; 
+	right: 0;
+	background:var(--color-red); 
+	border:0 none;
+	height: 100%;
+	cursor:pointer;
+	-webkit-border-radius: 5px;
+	border-radius: 20px; 
+  width: fluid-unit(
+		(
+			mobile: 50px,
+			desktop: 100px,
+		)
+	);
+}
+

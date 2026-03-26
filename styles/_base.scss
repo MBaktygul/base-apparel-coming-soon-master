@@ -1,13 +1,34 @@
 @use './settings/fonts' as *;
 @use './settings/typography' as *;
+@use './settings/colors' as *;
+@use './settings/space' as *;
+@use './tools/px-to-rem' as *;
+@use './tools/fluid-unit' as *;
 
 html {
 	font-family: $font-stack;
   font-weight: $font-weight-regular;
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background-image: linear-gradient(135deg, var(--color-pale-pink), var(--color-pale-dark-pink));
+	background-image: linear-gradient(135deg, var(--color-pale-pink), var(--color-pale-dark-pink));
+}
+
+header {
+ 	margin: var(--space-margin-top-bottom-s) var(--space-margin-left-right);
+}
+
+footer {
+	width: 100%;
+	text-align: center;
+	position: static;
+	margin-bottom: var(--space-s);
+}
+
+p {
+	color: var(--color-pink);
 }
 
 h1 {

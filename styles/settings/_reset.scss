@@ -1,82 +1,209 @@
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
+// Combination of own rules and
+// necolas/normalize.css (https://github.com/necolas/normalize.css/)
 
-/* Prevent font size inflation */
-html {
-	-moz-text-size-adjust: none;
-	-webkit-text-size-adjust: none;
-	text-size-adjust: none;
-}
-
-/* Remove default margin in favour of better control in authored CSS */
+// Resetting margins, paddings, and borders //---------------------------------
+html,
 body,
 h1,
 h2,
 h3,
 h4,
+h5,
+h6,
+a,
 p,
-figure,
+span,
+em,
+small,
+strong,
+sub,
+sup,
+mark,
+del,
+ins,
+strike,
+abbr,
+dfn,
 blockquote,
-dl,
-dd {
-	margin: 0;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+q,
+cite,
+code,
+pre,
+ol,
 ul,
-ol {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+li,
+dl,
+dt,
+dd,
+div,
+section,
+article,
+main,
+aside,
+nav,
+header,
+hgroup,
+footer,
+img,
+figure,
+figcaption,
+address,
+time,
+audio,
+video,
+canvas,
+iframe,
+details,
+summary,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
-/* Set core body defaults */
-body {
-	height: 100%;
-	line-height: var(--spacing-l);
+// Layout & box sizing //------------------------------------------------------
+article,
+aside,
+footer,
+header,
+nav,
+section,
+main {
+  display: block;
 }
 
-/* Set shorter line heights on headings and interactive elements */
-h1,
-h2,
-h3,
-h4,
+html {
+  box-sizing: border-box;
+  text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+// Typography //---------------------------------------------------------------
+* {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+a,
+a:visited {
+  color: inherit;
+}
+
+// Forms //--------------------------------------------------------------------
 button,
 input,
-label {
-	line-height: 1.1;
-}
-
-/* Balance text wrapping on headings */
-h1,
-h2,
-h3,
-h4 {
-	text-wrap: balance;
-}
-
-/* A elements that don't have a class get default styles */
-a {
-	text-decoration: none;
-}
-
-/* Make images easier to work with */
-img,
-picture {
-	display: block;
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
 	width: 100%;
 }
 
-/* Inherit fonts for inputs and buttons */
-input,
 button,
-textarea,
+input {
+  overflow: visible;
+}
+
+button,
 select {
-	font-family: inherit;
-	font-size: inherit;
-	outline: none;
+  text-transform: none;
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  appearance: button;
+}
+
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+button:-moz-focusring,
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type='search'] {
+  appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type='search']::-webkit-search-decoration {
+  appearance: none;
+}
+
+// Resetting specific element styles //----------------------------------------
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+img {
+  display: block;
+  width: auto;
+  height: auto;
+  border-style: none;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::after,
+blockquote::before,
+q::after,
+q::before {
+  content: '';
+  content: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+[disabled] {
+  cursor: not-allowed;
 }

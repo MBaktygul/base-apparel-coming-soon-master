@@ -16,28 +16,29 @@
 }
 
 @mixin font-set($key) {
-  @if $key == 'h1-light' {
-    @include font($font-stack, $font-weight-light, 42px, 60px);
+  @if $key == 'h1' {
+    @include font($font-stack, $font-weight-semibold, 44px, 50px);
 
     font-size: var(--font-step-3);
     word-break: break-word;
   }
 
-  @if $key == 'h1' {
-    @include font($font-stack, $font-weight-bold, 42px, 70px);
+  @if $key == 'h1-light' {
+    @include font($font-stack, $font-weight-light, 44px, 50px);
 
     font-size: var(--font-step-3);
     word-break: break-word;
   }
 
   @if $key == 'text-regular' {
-    @include font($font-stack, $font-weight-regular, 16px, 26px);
+    @include font($font-stack, $font-weight-regular, 24px, 30px);
 
     font-size: var(--font-step-2);
+    line-height: 1.5;
   }
 
   @if $key == 'text-small' {
-    @include font($font-stack, $font-weight-regular, 14px, 20px);
+    @include font($font-stack, $font-weight-regular, 16px, 18px);
 
     font-size: var(--font-step-1);
   }

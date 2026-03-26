@@ -1,0 +1,57 @@
+@use 'sass:map';
+@use '../settings/breakpoints' as *;
+
+// Mixin for flexible media queries
+//
+// @param {String} $mq-breakpoint - List map key
+// @param {String} $direction - Media query direction
+// @param {Map} $mq-breakpoints - Sass list map
+//
+// Example - Usage
+// $breakpoints: (
+//   small: 600px,
+//   medium: 900px,
+//   large: 1200px,
+// )
+//
+//
+// @include mq(large) {
+//   border-color: lavender
+// }
+//
+// Example - Output
+// @media screen and (min-width: 1201px) {
+//   border-color: lavender
+// }
+//
+//
+// Example with fixed value - Usage
+// @include mq(1024px) {
+//   border-color: lavenderblush
+// }
+//
+// Example with fixed value - Output
+// @media screen and (max-width: 1024px) {
+//   border-color: lavenderblush
+// }
+//
+// Caveats:
+// * You can not add the last breakpoint in the list with direction 'only'.
+// * You can not use a fixed value with direction 'only'.
+
+@mixin mq($mq-breakpoint, $mq-breakpoints: $breakpoints) {
+  // Init key variable
+  $mq-key: false;
+
+  // If $mq-breakpoint is a key that exists in
+  // $mq-breakpoints, get and use the value
+  // and store the key for the 'only' case
+  @if map.has-key($mq-breakpoints, $mq-breakpoint) {
+    $mq-key: $mq-breakpoint;
+    $mq-breakpoint: map.get($mq-breakpoints, $mq-breakpoint);
+  }
+
+  @media screen and (min-width: #{$mq-breakpoint}) {
+    @content;
+  }
+}

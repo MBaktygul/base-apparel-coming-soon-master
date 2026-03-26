@@ -1,13 +1,13 @@
 @use '../tools/fluid-unit' as *;
 
 :root {
-  --space-xxs: #{fluid-unit(
+  --space-xs: #{fluid-unit(
     (
       mobile: 16px,
       desktop: 18px,
     )
   )};
-  --space-xs: #{fluid-unit(
+  --space-s: #{fluid-unit(
     (
       mobile: 24px,
       desktop: 28px,
@@ -28,13 +28,19 @@
     --space-margin-left-right: #{fluid-unit(
     (
       mobile: 30px,
-      desktop: 170px,
+      desktop: 160px,
     )
   )};
     --space-margin-top-bottom: #{fluid-unit(
     (
+      mobile: 60px,
+      desktop: 130px,
+    )
+  )};
+    --space-margin-top-bottom-s: #{fluid-unit(
+    (
       mobile: 30px,
-      desktop: 64px,
+      desktop: 60px,
     )
   )};
 }

@@ -1,3 +1,5 @@
+@use './font-face' as *;
+
 $font-stack: 'JosefinSans', 'Tahoma', 'Verdana', sans-serif;
 $font-weight-light: 300;
 $font-weight-regular: 400;
@@ -8,5 +10,5 @@ $font-size-base: 16px;
 :root {
   --font-weight-light: #{$font-weight-light};
   --font-weight-regular: #{$font-weight-regular};
-  --font-weight-bold: #{$font-weight-semibold};
+  --font-weight-semibold: #{$font-weight-semibold};
 }
