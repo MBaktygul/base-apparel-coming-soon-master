@@ -1,0 +1,19 @@
+@use 'sass:math';
+@use '../settings/fonts' as *;
+
+/* PX to REM
+  ==========================================================================
+  converts px to rem = easier calculations
+
+  usage:
+  font-size: px-to-rem(15px);
+*/
+@function px-to-rem($value, $round: false) {
+  @if $round == 'ceil' {
+    @return math.ceil(math.div($value, $font-size-base) * 100) / 100 * 1rem; // Round so that only two decimals remain
+  }
+  @if $round == 'floor' {
+    @return math.floor(math.div($value, $font-size-base) * 100) / 100 * 1rem; // Round so that only two decimals remain
+  }
+  @return math.div($value, $font-size-base) * 1rem;
+}

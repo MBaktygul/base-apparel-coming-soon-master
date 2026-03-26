@@ -1,0 +1,23 @@
+$colors: (
+  'black': 0 0% 0%,
+  'white': 0 0% 100%,
+  'pink': 0 36% 70%,
+  'red': 0  93% 68%,
+  'pale-pink': 0 0% 100%,
+  'pale-dark-pink': 0 100% 98%,
+  'pale-red': 0 80% 86%,
+  'pale-dark-red': 0 74% 74%,
+  'gray': 0 6% 24%,
+);
+
+
+// Pure rgb values allow us to do something like: rgba(var(--color-black-rgb), 0.2)
+// --color-black-rgb: 255, 255, 255
+:root {
+  --color-text: var(--color-black);
+  --color-background: var(--color-white);
+  // Colors
+  @each $color-name, $color-hsl in $colors {
+    --color-#{$color-name}: #{hsl(($color-hsl))};
+  }
+}

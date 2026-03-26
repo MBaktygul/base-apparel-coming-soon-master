@@ -1,0 +1,16 @@
+@use 'settings/typography' as *;
+
+.coming-soon__logo {
+  max-width: 10rem;
+}
+
+.coming-soon__heading--light {
+  @include font-set(h1-light);
+}
+
+// attribution
+.attribution {
+	text-align: center;
+	position: fixed;
+	bottom: 5px;
+}

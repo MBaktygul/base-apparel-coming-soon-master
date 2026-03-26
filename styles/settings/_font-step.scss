@@ -1,0 +1,47 @@
+@use './typography' as *;
+@use '../tools/fluid-unit' as *;
+
+:root {
+  --font-step-1: #{fluid-unit(
+    (
+      mobile: 14px,
+      desktop: 20px,
+    )
+  )};
+  --font-step-2: #{fluid-unit(
+    (
+      mobile: 16px,
+      desktop: 20px,
+    )
+  )};
+  --font-step-3: #{fluid-unit(
+    (
+      mobile: 42px,
+      desktop: 60px,
+    )
+  )};
+}
+
+h1 {
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h1,
+.h1 {
+  @include font-set(h1);
+}
+
+.h1-light {
+  @include font-set(h1-light);
+}
+
+p,
+.text-regular {
+  @include font-set(text-regular);
+}
+
+.text-small {
+  @include font-set(text-small);
+}

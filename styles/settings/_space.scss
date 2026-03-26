@@ -1,0 +1,40 @@
+@use '../tools/fluid-unit' as *;
+
+:root {
+  --space-xxs: #{fluid-unit(
+    (
+      mobile: 16px,
+      desktop: 18px,
+    )
+  )};
+  --space-xs: #{fluid-unit(
+    (
+      mobile: 24px,
+      desktop: 28px,
+    )
+  )};
+  --space-m: #{fluid-unit(
+    (
+      mobile: 40px,
+      desktop: 48px,
+    )
+  )};
+  --space-l: #{fluid-unit(
+    (
+      mobile: 65px,
+      desktop: 200px,
+    )
+  )};
+    --space-margin-left-right: #{fluid-unit(
+    (
+      mobile: 30px,
+      desktop: 170px,
+    )
+  )};
+    --space-margin-top-bottom: #{fluid-unit(
+    (
+      mobile: 30px,
+      desktop: 64px,
+    )
+  )};
+}

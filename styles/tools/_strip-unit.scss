@@ -1,0 +1,23 @@
+@use 'sass:math';
+@use 'sass:string';
+
+// Removes units
+@function strip-unit($value) {
+  @return math.div($value, ($value * 0 + 1));
+}
+
+// Replaces characters in a string
+// prettier-ignore
+@function str-replace($string, $search, $replace: '') {
+  $index: string.index($string, $search);
+
+  @return if(
+    $index,
+    string.slice($string, 1, $index - 1) + $replace + str-replace(
+      string.slice($string, $index + string.length($search)),
+      $search,
+      $replace
+    ),
+    $string
+  );
+}

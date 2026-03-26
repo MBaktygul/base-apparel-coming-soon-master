@@ -1,0 +1,45 @@
+@use './fonts' as *;
+@use '../tools/px-to-rem' as *;
+@use '../tools/line-height' as *;
+@use '../tools/strip-unit' as *;
+
+@mixin font(
+  $font-stack,
+  $weight: normal,
+  $size: inherit,
+  $line-height: 1
+) {
+  font-family: $font-stack;
+  font-size: px-to-rem($size);
+  font-weight: $weight;
+  line-height: lineheight(strip-unit($size), strip-unit($line-height));
+}
+
+@mixin font-set($key) {
+  @if $key == 'h1-light' {
+    @include font($font-stack, $font-weight-light, 42px, 60px);
+
+    font-size: var(--font-step-3);
+    word-break: break-word;
+  }
+
+  @if $key == 'h1' {
+    @include font($font-stack, $font-weight-bold, 42px, 70px);
+
+    font-size: var(--font-step-3);
+    word-break: break-word;
+  }
+
+  @if $key == 'text-regular' {
+    @include font($font-stack, $font-weight-regular, 16px, 26px);
+
+    font-size: var(--font-step-2);
+  }
+
+  @if $key == 'text-small' {
+    @include font($font-stack, $font-weight-regular, 14px, 20px);
+
+    font-size: var(--font-step-1);
+  }
+}
+

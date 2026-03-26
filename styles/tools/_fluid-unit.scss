@@ -1,0 +1,53 @@
+@use 'sass:map';
+@use 'sass:list';
+@use 'sass:math';
+@use '../settings/breakpoints' as *;
+@use './strip-unit' as *;
+@use './px-to-rem' as *;
+
+@function fluid-unit($unit) {
+  $min-width: '';
+  $min-size: 0;
+  $max-width: '';
+  $max-size: 0;
+
+  @for $i from 1 through list.length($unit) {
+    $result: list.nth($unit, $i);
+    $breakpoint: list.nth($result, 1);
+    $size: list.nth($result, 2);
+    @if $i == 1 {
+      $min-width: strip-unit(map.get($breakpoints-in-px, $breakpoint));
+      $min-size: $size;
+    }
+    @if $i == 2 {
+      $max-width: strip-unit(map.get($breakpoints-in-px, $breakpoint));
+      $max-size: $size;
+    }
+  }
+
+  $slope: math.div($max-size - $min-size, $max-width - $min-width);
+  $y-intersection: (-1 * $min-width) * $slope + $min-size;
+
+  $result: clamp(
+    #{px-to-rem($min-size)},
+    calc(#{px-to-rem($y-intersection)} + #{strip-unit($slope) * 100vw}),
+    #{px-to-rem($max-size)}
+  );
+
+  @if $max-size < $min-size {
+    $result: clamp(
+      #{px-to-rem($max-size)},
+      calc(#{px-to-rem($y-intersection)} + #{strip-unit($slope) * 100vw}),
+      #{px-to-rem($min-size)}
+    );
+  }
+
+  @return $result;
+
+  /* --- IF you need legacy support without using clamp() - for this you have to set a font base size --- */
+  // @use 'scss_settings/settings.fonts' as *;
+  // $min-width: strip-unit(map.get($breakpoints-in-px, $min-vw));$min-width$min-width$min-width
+  // $max-width: strip-unit(map.get($breakpoints-in-px, $max-vw));$max-width$max-width$max-width
+  // $fluid-slope: calc((100vw - $min-width / $f-size-base * 1rem) / ($max-width - $min-width));$fluid-slope$fluid-slope$fluid-slope
+  // @return calc(((#{$min-size} / #{$f-size-base}) * 1rem) + (#{$max-size} - #{$min-size}) * $fluid-slope);
+}

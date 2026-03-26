@@ -1,0 +1,21 @@
+@use './settings/colors' as *;
+
+body {
+  font-family: 'JosefinaSans';
+  background-image: linear-gradient(135deg, $pale-pink, $pale-dark-pink);
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+a {
+	color: $pale-dark-red;
+
+	&:visited {
+		color: $pale-dark-red;
+	}
+	&:hover {
+		color: $red;
+	}
+}
