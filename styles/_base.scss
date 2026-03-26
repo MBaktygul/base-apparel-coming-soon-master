@@ -13,6 +13,8 @@ html {
 }
 
 body {
+	min-height: 100vh;
+  padding: 0;
 	background-image: linear-gradient(135deg, var(--color-pale-pink), var(--color-pale-dark-pink));
 }
 
@@ -21,10 +23,14 @@ header {
 }
 
 footer {
+	display: flex;
+	flex-direction: column;
+	gap: px-to-rem(8px);
 	width: 100%;
 	text-align: center;
 	position: static;
 	margin-bottom: var(--space-s);
+	margin-top: var(--space-m);
 }
 
 p {

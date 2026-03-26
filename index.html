@@ -23,12 +23,17 @@
         </h1>
         <p>Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
 
-        <form action="#" class="coming-soon__form">
-          <label for="email"></label>
-          <input type="email" id="email" pattern=".+@example\.com" size="30" placeholder="Email Address" required/>
-          <input type="submit" value=''>
+        <form action="#" id="form" novalidate>
+          <div class="coming-soon__form">
+            <label for="email"></label>
+            <input type="email" id="email" size="30" placeholder="Email Address" required/>
+            <span class="coming-soon__form-submit">
+              <input type="submit" value=''>
+            </span>
+            <span class="coming-soon__form-error" id="error-icon"></span>
+          </div>
+          <p id="error-message">Please provide a valid email</p>
         </form>
-
       </div>
     </main>
     <footer>
@@ -38,5 +43,6 @@
       <span>Coded by <a href="https://github.com/MBaktygul" target="_blank">Baktygul</a>
       </span>
     </footer>
+    <script src="index.js"></script>
   </body>
 </html>
