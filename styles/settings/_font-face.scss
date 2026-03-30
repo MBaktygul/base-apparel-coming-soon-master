@@ -1,24 +1,18 @@
 /* Font face */
 @font-face {
 	font-family: 'JosefinSans';
-	src: url('/fonts/JosefinSans-Light.ttf') format('truetype');
-	src: url('/fonts/JosefinSans-Light.woff') format('woff');
-	src: url('/fonts/JosefinSans-Light.woff2') format('woff2');
+	src: url('/fonts/JosefinSans-Light.ttf') format('truetype'),  url('/fonts/JosefinSans-Light.woff') format('woff'), url('/fonts/JosefinSans-Light.woff2') format('woff2');
 	font-weight: 300;
 }
 
 @font-face {
 	font-family: 'JosefinSans';
-	src: url('/fonts/JosefinSans-Regular.ttf') format('truetype');
-	src: url('/fonts/JosefinSans-Regular.woff') format('woff');
-	src: url('/fonts/JosefinSans-Regular.woff2') format('woff2');
+	src: url('/fonts/JosefinSans-Regular.ttf') format('truetype'), url('/fonts/JosefinSans-Regular.woff') format('woff'), url('/fonts/JosefinSans-Regular.woff2') format('woff2');
 	font-weight: 400;
 }
 
 @font-face {
 	font-family: 'JosefinSans';
-	src: url('/fonts/JosefinSans-SemiBold.ttf') format('truetype');
-	src: url('/fonts/JosefinSans-SemiBold.woff') format('woff');
-	src: url('/fonts/JosefinSans-SemiBold.woff2') format('woff2');
+	src: url('/fonts/JosefinSans-SemiBold.ttf') format('truetype'), url('/fonts/JosefinSans-SemiBold.woff') format('woff'), url('/fonts/JosefinSans-SemiBold.woff2') format('woff2');
 	font-weight: 600;
 }
