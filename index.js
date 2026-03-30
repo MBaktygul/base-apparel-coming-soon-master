@@ -12,4 +12,7 @@ form.addEventListener('submit', (e) => {
 
   error.style.display = isValid ? 'none' : 'block';
   errorIcon.style.display = isValid ? 'none' : 'block';
+
+  error.setAttribute('aria-hidden', isValid ? 'true' : 'false');
+  email.setAttribute('aria-invalid', isValid ? 'false' : 'true');
 });
