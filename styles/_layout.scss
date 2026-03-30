@@ -168,8 +168,9 @@
 #error-message {
 	@include font-set(text-small);
 	
-	display: none;
 	color: var(--color-red);
+	display: none;
+	position: absolute;
 	text-align: start;
 	margin-top: px-to-rem(10px);
 	margin-left: px-to-rem(20px);
