@@ -42,8 +42,6 @@ footer {
 
 	@include mq(tablet) {
 		width: fit-content;
-    position: absolute; 
-    bottom: 20px;
     left: 0;
 		margin: var(--space-margin-top-bottom-s) var(--space-margin-left-right);
 		text-align: start;

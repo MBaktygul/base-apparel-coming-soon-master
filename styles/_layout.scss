@@ -17,6 +17,7 @@
 	grid-template-columns: 1fr;
   
   @include mq(tablet) {
+		align-items: center;
 		grid-template-columns: repeat(3, 1fr);
 		height: 100vh;
   }
@@ -24,6 +25,7 @@
 
 .coming-soon__hero-image {     
   width: 100%;
+	height: 100%;
 
   @include mq(tablet) {
     order: 1;   

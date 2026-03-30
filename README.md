@@ -26,7 +26,12 @@ Users should be able to:
 
 ### Screenshot
 
+![Screenshot of the coming soon page](/images/coming-soon.png)
+
 ### Links
+
+- Solution URL: [Solution html](https://github.com/MBaktygul/base-apparel-coming-soon-master/blob/main/index.html)
+- Live Site URL: [Base apparel coming soon master page](https://base-apparel-coming-soon-master-eastrhpt5-mbaktyguls-projects.vercel.app/)
 
 ## My process
 
